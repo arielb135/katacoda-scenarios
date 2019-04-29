@@ -39,6 +39,12 @@
   },
   "environment": {
   	"hidefinish": true,
+	"showdashboard": true,
+	"dashboards": [{"name": "Port 80", "port": 80},
+            {"name": "URL", "href": "https://www.google.co.uk"},
+            {"name": "Placeholder", "href": "https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com"}],
+        "terminals": [
+        ],
   	"icon": "fa-kubernetes",
     "uilayout": "terminal"
   },

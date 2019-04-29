@@ -1,23 +1,11 @@
-In this step we will prepare Helm tool.
+In this step you will deploy kubernetes dashboard and connect to it
 
 ## Task
 
-Download Helm
+Deploying the dashboard:
 
-`curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash`{{execute}}
+`kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/aio/deploy/recommended/kubernetes-dashboard.yaml | bash`{{execute}}
 
-Initialize
+Enable the UI access:
 
-`helm init`{{execute}}
-
-Update respository
-
-`helm repo update`{{execute}}
-
-Check all system pods are up
-
-`kubectl get pods -n kube-system`{{execute}}
-
-Check Helm is healthy
-
-`helm version`{{execute}}
+`kubectl proxy | bash`{{execute}}
