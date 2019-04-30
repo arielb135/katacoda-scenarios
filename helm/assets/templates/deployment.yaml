@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}-app
+  labels:
+    app: {{ .Chart.Name }}
+    tier: frontend
+spec:
+  replicas: {{ .Values.replicas }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Chart.Name }}
+        tier: frontend
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}-app
+        image: "sdelements/lets-chat:{{ .Chart.Version }}"
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+        - name: mongo-settings
+          mountPath: /usr/src/app/config
+        ports:
+        - name: http
+          containerPort: 8080
+        env:
+        - name: LCB_DATABASE_URI
+          value: mongodb://{{ .Release.Name }}-mongodb/letschat
+      volumes:
+        - name: mongo-settings
+          configMap:
+            name: mongo-settings

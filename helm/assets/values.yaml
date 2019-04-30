@@ -1,0 +1,4 @@
+replicas: 1
+mongodb:
+  persistence:
+    storageClass: manual
