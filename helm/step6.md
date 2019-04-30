@@ -2,30 +2,29 @@ In this step we will add graphs to dashboard.
 
 ## Task
 
-Install heapster
+Install heapster - which will allow us to get metrics
 
 `helm install --name heapster --namespace kube-system --set service.nameOverride=heapster stable/heapster`{{execute}}
 
-Deploy the dashboard
+Deploying the dashboard:
 
-`kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml`{{execute}}
+`kubectl apply -f https://gist.githubusercontent.com/mjboxboat/9601f7aff786f52bce3f4af7e21b8339/raw/572f1c056c9385fb5ebc8a55a64717331028b284/kube-dash.yml`{{execute}}
 
-Check pod status
+You can check the status of the pods by executing:
 
 `kubectl get pods -n kube-system`{{execute}}
 
-Once all pods are up, start proxy
+you should see eventally all pods up and running:
 
-`kubectl proxy --address='0.0.0.0' --port=8080 --accept-hosts='^*$'&`{{execute}}
+```
+NAME                                    READY     STATUS    RESTARTS   AGE
+coredns-78fcdf6894-9wt7h                1/1       Running   0          47s
+coredns-78fcdf6894-dqxf6                1/1       Running   0          47s
+kube-proxy-9hgxj                        1/1       Running   0          47s
+kubernetes-dashboard-57584d8594-sdwts   1/1       Running   0          38s
+weave-net-tkl5m                         2/2       Running   1          47s
+```
 
-Open the dashboard using URL below
+Browse and check out kubernetes dashboard, go to the "demo" namespace and check out the objects:
 
-http://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
-
-Use Ctrl+C to stop the proxy
-
-Clean up
-
-`helm delete --purge demo`{{execute}}
-
-`kubectl get pods,deployments,services,rs,cm,pv,pvc -n demo`{{execute}}
+https://[[HOST_SUBDOMAIN]]-32000-[[KATACODA_HOST]].environments.katacoda.com	

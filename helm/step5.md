@@ -2,26 +2,28 @@ In this task we will enable text files upload, while the application is still in
 
 ## Task
 
-Edit the values yaml, and enable the 
+Edit the values yaml, and enable the files support
 
 `demo/lets-chat/values.yaml`{{open}}
 
-`helm install lets-chat --name demo --namespace demo -f values.yml`{{execute}}
+Change files_support enabled to ** true **:
 
-List releases
+```
+# Should we support file upload?	
+files_support:
+  enabled: false
+```
 
-`helm list`{{execute}}
+Upgrade the chart:
 
-Check deployment status
+`helm upgrade lets-chat --name demo -f ./lets-chat/values.yaml`{{execute}}
 
-`helm status demo`{{execute}}
-
-`kubectl get pods -n demo`{{execute}}
-
-Open application, Register and open chat - see that indeed files are not allowed (right pane)
+Open the application again and see that now you are able to upload files
 
 http://[[HOST_SUBDOMAIN]]-30303-[[KATACODA_HOST]].environments.katacoda.com
 
-Delete database pod and relogin to see that the data was preserved
+The upgrade was unsuccessful from your end, let's rollback the change, see now that the files are not allowed:
 
-`kubectl delete pod -n demo -l app=demo-mongodb`{{execute}}
+`helm history demo`{{execute}}
+
+`helm rollback demo 1`{{execute}}
