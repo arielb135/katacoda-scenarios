@@ -55,8 +55,7 @@
   	"hidefinish": true,
   	"icon": "fa-kubernetes",
 	"showdashboard": false,
-    "uilayout": "editor-terminal",
-	"uisettings": "yaml"
+    "uilayout": "editor-terminal"
   },
   "backend": {
     "imageid": "kubernetes"
