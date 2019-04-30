@@ -30,3 +30,6 @@ Helm - is a kubernetes package manager, several notes about it:
 * Create reproducible builds of your Kubernetes applications
 * Intelligently manage your Kubernetes manifest files
 * Manage releases of Helm packages
+
+Tiller - Tiller is the in-cluster component of Helm. 
+It interacts directly with the Kubernetes API server to install, upgrade, query, and remove Kubernetes resources. It also stores the objects that represent releases.
