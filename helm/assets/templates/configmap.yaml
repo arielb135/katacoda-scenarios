@@ -5,4 +5,15 @@ metadata:
 data:
   settings.yml: |
     database:
-      uri: mongodb://{{ .Release.Name }}-mongodb/letschat
+      uri: mongodb://{{ .Release.Name }}-mongodb/letschat	 
+    files:
+      enable: false
+      provider: local
+      maxFileSize: 100000000
+      restrictTypes: true
+      allowedTypes:
+        - 'image/jpeg'
+        - 'image/png'
+        - 'image/gif'
+      local:
+        dir: uploads
