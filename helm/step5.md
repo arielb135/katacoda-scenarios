@@ -4,7 +4,7 @@ In this task we will enable text files upload, while the application is still in
 
 Edit the values yaml, and enable the 
 
-`values.yaml`{{open}}
+`demo/lets-chat/values.yaml`{{open}}
 
 `helm install lets-chat --name demo --namespace demo -f values.yml`{{execute}}
 
