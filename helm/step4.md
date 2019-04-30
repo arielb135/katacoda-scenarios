@@ -4,7 +4,7 @@ In this step we will deploy and maintain life cycle of the application.
 
 Install the chart
 
-`helm install lets-chat --name demo --namespace demo -f values.yml`{{execute}}
+`helm install lets-chat --name demo --namespace demo -f ./lets-chat/values.yaml`{{execute}}
 
 List releases
 

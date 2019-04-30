@@ -52,7 +52,7 @@
   	"hidefinish": true,
   	"icon": "fa-kubernetes",
 	"showdashboard": true,
-	"dashboards": [{"name": "Chat application", "href": "http://[[HOST_SUBDOMAIN]]-30303-[[KATACODA_HOST]].environments.katacoda.com"}],
+	"dashboards": [{"name": "chat", "port": 30303}],
     "uilayout": "terminal-iframe"
   },
   "backend": {
