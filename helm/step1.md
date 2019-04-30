@@ -18,8 +18,15 @@ Check all system pods are up
 
 `kubectl get pods -n kube-system`{{execute}}
 
-### Note
-
 Check Helm is healthy
 
 `helm version`{{execute}}
+
+### Helm and Tiller
+
+Helm - is a kubernetes package manager, several notes about it:
+* Find and use popular software packaged as Helm charts to run in Kubernetes
+* Share your own applications as Helm charts
+* Create reproducible builds of your Kubernetes applications
+* Intelligently manage your Kubernetes manifest files
+* Manage releases of Helm packages
