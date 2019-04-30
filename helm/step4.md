@@ -18,6 +18,8 @@ Check deployment status
 
 Open application, Register and open chat - see that indeed files are not allowed (right pane)
 
+** Note - There's issue in chrome with this app, open in internet explorer or firefox **
+
 http://[[HOST_SUBDOMAIN]]-30303-[[KATACODA_HOST]].environments.katacoda.com
 
 Delete database pod and relogin to see that the data was preserved

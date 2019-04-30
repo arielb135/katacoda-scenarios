@@ -48,9 +48,6 @@
       ]
     }
   },
-  "files": [
-        "/root/demo/lets-chat/values.yaml"
-    ],
   "environment": {
   	"hidefinish": true,
   	"icon": "fa-kubernetes",
