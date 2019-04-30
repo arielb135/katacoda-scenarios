@@ -18,11 +18,17 @@ you should see eventally all pods up and running:
 
 ```
 NAME                                    READY     STATUS    RESTARTS   AGE
-coredns-78fcdf6894-9wt7h                1/1       Running   0          47s
-coredns-78fcdf6894-dqxf6                1/1       Running   0          47s
-kube-proxy-9hgxj                        1/1       Running   0          47s
-kubernetes-dashboard-57584d8594-sdwts   1/1       Running   0          38s
-weave-net-tkl5m                         2/2       Running   1          47s
+coredns-78fcdf6894-b5wwz                1/1       Running   0          12m
+coredns-78fcdf6894-mwjsw                1/1       Running   0          12m
+etcd-master                             1/1       Running   0          11m
+heapster-heapster-84bfbd79d-cn6jd       2/2       Running   0          19s
+kube-apiserver-master                   1/1       Running   0          11m
+kube-controller-manager-master          1/1       Running   0          12m
+kube-proxy-wsvx8                        1/1       Running   0          12m
+kube-scheduler-master                   1/1       Running   0          11m
+kubernetes-dashboard-57584d8594-lnhkc   1/1       Running   0          19s
+tiller-deploy-7c69c66d57-7kvgj          1/1       Running   0          12m
+weave-net-wxcmh                         2/2       Running   1          12m
 ```
 
 Browse and check out kubernetes dashboard, go to the "demo" namespace and check out the objects:
