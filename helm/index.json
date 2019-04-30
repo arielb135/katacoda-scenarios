@@ -49,7 +49,7 @@
     }
   },
   "files": [
-        "/root/demo/lets-chat/values.yaml"
+        "values.yaml"
     ],
   "environment": {
   	"hidefinish": true,
