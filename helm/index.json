@@ -48,12 +48,15 @@
       ]
     }
   },
+  "files": [
+        "values.yaml"
+    ],
   "environment": {
   	"hidefinish": true,
   	"icon": "fa-kubernetes",
-	"showdashboard": true,
-	"dashboards": [{"name": "chat", "port": 30303}],
-    "uilayout": "terminal-iframe"
+	"showdashboard": false,
+    "uilayout": "editor-terminal",
+	"uisettings": "yaml"
   },
   "backend": {
     "imageid": "kubernetes"
