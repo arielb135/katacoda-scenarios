@@ -1,31 +1,25 @@
-In this step we will add graphs to dashboard.
+In this task we will enable text files upload, while the application is still in air.
 
 ## Task
 
-Install heapster
+Edit the values yaml
 
-`helm install --name heapster --namespace kube-system --set service.nameOverride=heapster stable/heapster`{{execute}}
+`helm install lets-chat --name demo --namespace demo -f values.yml`{{execute}}
 
-Deploy the dashboard
+List releases
 
-`kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml`{{execute}}
+`helm list`{{execute}}
 
-Check pod status
+Check deployment status
 
-`kubectl get pods -n kube-system`{{execute}}
+`helm status demo`{{execute}}
 
-Once all pods are up, start proxy
+`kubectl get pods -n demo`{{execute}}
 
-`kubectl proxy --address='0.0.0.0' --port=8080 --accept-hosts='^*$'&`{{execute}}
+Open application, Register and open chat - see that indeed files are not allowed (right pane)
 
-Open the dashboard using URL below
+http://[[HOST_SUBDOMAIN]]-30303-[[KATACODA_HOST]].environments.katacoda.com
 
-http://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
+Delete database pod and relogin to see that the data was preserved
 
-Use Ctrl+C to stop the proxy
-
-Clean up
-
-`helm delete --purge demo`{{execute}}
-
-`kubectl get pods,deployments,services,rs,cm,pv,pvc -n demo`{{execute}}
+`kubectl delete pod -n demo -l app=demo-mongodb`{{execute}}

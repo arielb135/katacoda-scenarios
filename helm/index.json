@@ -23,8 +23,12 @@
         "text": "step4.md"
       },
       {
-        "title": "Improve Dashboard",
+        "title": "Upgrade application",
         "text": "step5.md"
+      },
+	  {
+        "title": "Improve Dashboard",
+        "text": "step6.md"
       }
     ],
     "intro": {
@@ -51,7 +55,9 @@
   "environment": {
   	"hidefinish": true,
   	"icon": "fa-kubernetes",
-    "uilayout": "terminal"
+	"showdashboard": true,
+	"dashboards": [{"name": "Chat application", "href": "http://[[HOST_SUBDOMAIN]]-30303-[[KATACODA_HOST]].environments.katacoda.com"}],
+    "uilayout": "terminal-iframe"
   },
   "backend": {
     "imageid": "kubernetes"

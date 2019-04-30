@@ -3,7 +3,7 @@ kind: PersistentVolume
 metadata:
   name: lets-chat-pv
 spec:
-  storageClassName: manual
+  storageClassName: {{ .Values.mongodb.persistence.storageClass}}
   capacity:
     storage: 10Gi
   accessModes:

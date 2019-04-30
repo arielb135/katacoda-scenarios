@@ -4,7 +4,7 @@ In this step we will deploy and maintain life cycle of the application.
 
 Install the chart
 
-`helm install lets-chat --name demo --namespace demo -f my_values.yml`{{execute}}
+`helm install lets-chat --name demo --namespace demo -f values.yml`{{execute}}
 
 List releases
 
@@ -16,19 +16,7 @@ Check deployment status
 
 `kubectl get pods -n demo`{{execute}}
 
-Upgrade applicattion
-
-`sed -i 's/0.4.7/0.4.6/g' lets-chat/Chart.yaml`{{execute}}
-
-`helm upgrade demo lets-chat --set replicas=2`{{execute}}
-
-Rollback
-
-`helm history demo`{{execute}}
-
-`helm rollback demo 1`{{execute}}
-
-Open application
+Open application, Register and open chat - see that indeed files are not allowed (right pane)
 
 http://[[HOST_SUBDOMAIN]]-30303-[[KATACODA_HOST]].environments.katacoda.com
 

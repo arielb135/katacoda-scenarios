@@ -1,4 +1,16 @@
-replicas: 1
+# How many replicas of the chat applications to raise
+replicas: 2
+
+# Type of storage class of the mongo DB.
 mongodb:
   persistence:
     storageClass: manual
+
+# Should we support file upload?	
+files_support:
+  enabled: false
+  allow:
+    # Allow types of image files
+    images: true
+    # Allow types of documents / text files..
+    documents: true

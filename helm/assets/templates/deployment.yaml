@@ -12,13 +12,15 @@ spec:
       labels:
         app: {{ .Chart.Name }}
         tier: frontend
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
     spec:
       containers:
       - name: {{ .Chart.Name }}-app
         image: "sdelements/lets-chat:{{ .Chart.Version }}"
         imagePullPolicy: IfNotPresent
         volumeMounts:
-        - name: mongo-settings
+        - name: chat-settings
           mountPath: /usr/src/app/config
         ports:
         - name: http
@@ -27,6 +29,6 @@ spec:
         - name: LCB_DATABASE_URI
           value: mongodb://{{ .Release.Name }}-mongodb/letschat
       volumes:
-        - name: mongo-settings
+        - name: chat-settings
           configMap:
-            name: mongo-settings
+            name: chat-settings
