@@ -34,15 +34,15 @@
     "assets": {
       "host01": [
         {
-          "file": "my_values.yml",
+          "file": "assets/my_values.yml",
           "target": "/root/demo"
         },
         {
-          "file": "*.yaml",
+          "file": "assets/*.yaml",
           "target": "/root/demo/lets-chat"
         },
         {
-          "file": "templates/*.yaml",
+          "file": "assets/templates/*.yaml",
           "target": "/root/demo/lets-chat/templates"
         }        
       ]
